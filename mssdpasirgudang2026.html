@@ -57,25 +57,29 @@
       <form id="registrationForm" onsubmit="handleSubmit(event)">
        <section class="mb-8">
         <h3 class="text-xl font-semibold text-orange-600 mb-4 border-b-2 border-orange-300 pb-2">Maklumat Sekolah</h3>
-        <div class="mb-4"><label for="schoolName" class="block text-gray-700 font-medium mb-2">Nama Sekolah *</label> <input type="text" id="schoolName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Contoh: SK Taman Desa">
-         <div class="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-          <p class="text-sm text-blue-800"><span class="font-semibold">💡 Tips:</span> Anda boleh gunakan singkatan sahaja:</p>
-          <div class="text-xs text-blue-700 mt-1 grid grid-cols-2 gap-2">
-           <div>
-            • <strong>SK</strong> - Sekolah Kebangsaan
-           </div>
-           <div>
-            • <strong>SMK</strong> - Sekolah Menengah Kebangsaan
-           </div>
-           <div>
-            • <strong>SJKC</strong> - Sekolah Jenis Kebangsaan (Cina)
-           </div>
-           <div>
-            • <strong>SJKT</strong> - Sekolah Jenis Kebangsaan (Tamil)
-           </div>
-           <div>
-            • <strong>SMKA</strong> - Sekolah Menengah Kebangsaan Agama
-           </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+         <div><label for="schoolName" class="block text-gray-700 font-medium mb-2">Nama Sekolah *</label> <input type="text" id="schoolName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Contoh: SK Taman Desa">
+         </div>
+         <div><label for="schoolType" class="block text-gray-700 font-medium mb-2">Jenis Sekolah *</label> <select id="schoolType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"> <option value="">Pilih Jenis Sekolah</option> <option value="Sekolah Kebangsaan">Sekolah Kebangsaan</option> <option value="Sekolah Menengah">Sekolah Menengah</option> </select>
+         </div>
+        </div>
+        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg">
+         <p class="text-sm text-blue-800"><span class="font-semibold">💡 Tips:</span> Anda boleh gunakan singkatan sahaja:</p>
+         <div class="text-xs text-blue-700 mt-1 grid grid-cols-2 gap-2">
+          <div>
+           • <strong>SK</strong> - Sekolah Kebangsaan
+          </div>
+          <div>
+           • <strong>SMK</strong> - Sekolah Menengah Kebangsaan
+          </div>
+          <div>
+           • <strong>SJKC</strong> - Sekolah Jenis Kebangsaan (Cina)
+          </div>
+          <div>
+           • <strong>SJKT</strong> - Sekolah Jenis Kebangsaan (Tamil)
+          </div>
+          <div>
+           • <strong>SMKA</strong> - Sekolah Menengah Kebangsaan Agama
           </div>
          </div>
         </div>
@@ -157,7 +161,11 @@
        <form id="updateRegistrationForm" onsubmit="handleUpdateSubmit(event)"><input type="hidden" id="editRegId" value=""> <input type="hidden" id="originalCreatedAt" value="">
         <section class="mb-8">
          <h3 class="text-xl font-semibold text-orange-600 mb-4 border-b-2 border-orange-300 pb-2">Maklumat Sekolah</h3>
-         <div class="mb-4"><label for="editSchoolName" class="block text-gray-700 font-medium mb-2">Nama Sekolah *</label> <input type="text" id="editSchoolName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Contoh: SK Taman Desa">
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div><label for="editSchoolName" class="block text-gray-700 font-medium mb-2">Nama Sekolah *</label> <input type="text" id="editSchoolName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Contoh: SK Taman Desa">
+          </div>
+          <div><label for="editSchoolType" class="block text-gray-700 font-medium mb-2">Jenis Sekolah *</label> <select id="editSchoolType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"> <option value="">Pilih Jenis Sekolah</option> <option value="Sekolah Kebangsaan">Sekolah Kebangsaan</option> <option value="Sekolah Menengah">Sekolah Menengah</option> </select>
+          </div>
          </div>
         </section>
         <section class="mb-8">
@@ -219,7 +227,7 @@
              </tr>
              <tr class="hover:bg-gray-50 bg-yellow-50">
               <td class="py-2 px-3 font-bold text-orange-700">9.00 – 10.00 pagi</td>
-              <td class="py-2 px-3 font-semibold">🏁 Pusingan 1</td>
+              <td class="py-2 px-3 font-semibold">�� Pusingan 1</td>
              </tr>
              <tr class="hover:bg-gray-50">
               <td class="py-2 px-3 font-medium text-blue-700">10.15 pagi</td>
@@ -230,7 +238,7 @@
               <td class="py-2 px-3 font-semibold">🏁 Pusingan 2</td>
              </tr>
              <tr class="hover:bg-gray-50 bg-blue-50">
-              <td class="py-2 px-3 font-medium text-gray-600">12.00 – 2.00 ptg</td>
+              <td class="py-2 px-3 font-medium text-gray-600">12.00 ��� 2.00 ptg</td>
               <td class="py-2 px-3 text-gray-600">☕ Rehat</td>
              </tr>
              <tr class="hover:bg-gray-50 bg-yellow-50">
@@ -548,10 +556,27 @@
            <div class="font-semibold text-green-800 mb-2">
             Bawah 12 Tahun
            </div>
-           <div class="grid grid-cols-2 gap-2 text-sm">
+           <div class="grid grid-cols-2 gap-2 text-sm mb-3">
             <div class="bg-blue-200 text-blue-800 px-2 py-1 rounded"><span class="font-bold" id="primary12Male">0</span> Lelaki
             </div>
             <div class="bg-pink-200 text-pink-800 px-2 py-1 rounded"><span class="font-bold" id="primary12Female">0</span> Perempuan
+            </div>
+           </div><!-- Race breakdown for U12 -->
+           <div class="bg-white rounded-lg p-2 text-xs">
+            <div class="font-semibold text-gray-700 mb-2">
+             Mengikut Bangsa:
+            </div>
+            <div class="grid grid-cols-2 gap-1">
+             <div class="flex justify-between"><span>🔹 Melayu:</span> <span class="font-bold text-gray-800" id="primary12Melayu">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Cina:</span> <span class="font-bold text-gray-800" id="primary12Cina">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 India:</span> <span class="font-bold text-gray-800" id="primary12India">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Bumip.:</span> <span class="font-bold text-gray-800" id="primary12Bumip">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Lain:</span> <span class="font-bold text-gray-800" id="primary12Lain">0</span>
+             </div>
             </div>
            </div>
           </div>
@@ -574,10 +599,27 @@
            <div class="font-semibold text-purple-800 mb-2">
             Bawah 15 Tahun
            </div>
-           <div class="grid grid-cols-2 gap-2 text-sm">
+           <div class="grid grid-cols-2 gap-2 text-sm mb-3">
             <div class="bg-blue-200 text-blue-800 px-2 py-1 rounded"><span class="font-bold" id="secondary15Male">0</span> Lelaki
             </div>
             <div class="bg-pink-200 text-pink-800 px-2 py-1 rounded"><span class="font-bold" id="secondary15Female">0</span> Perempuan
+            </div>
+           </div><!-- Race breakdown for U15 -->
+           <div class="bg-white rounded-lg p-2 text-xs">
+            <div class="font-semibold text-gray-700 mb-2">
+             Mengikut Bangsa:
+            </div>
+            <div class="grid grid-cols-2 gap-1">
+             <div class="flex justify-between"><span>🔹 Melayu:</span> <span class="font-bold text-gray-800" id="secondary15Melayu">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Cina:</span> <span class="font-bold text-gray-800" id="secondary15Cina">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 India:</span> <span class="font-bold text-gray-800" id="secondary15India">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Bumip.:</span> <span class="font-bold text-gray-800" id="secondary15Bumip">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Lain:</span> <span class="font-bold text-gray-800" id="secondary15Lain">0</span>
+             </div>
             </div>
            </div>
           </div>
@@ -585,10 +627,27 @@
            <div class="font-semibold text-purple-800 mb-2">
             Bawah 18 Tahun
            </div>
-           <div class="grid grid-cols-2 gap-2 text-sm">
+           <div class="grid grid-cols-2 gap-2 text-sm mb-3">
             <div class="bg-blue-200 text-blue-800 px-2 py-1 rounded"><span class="font-bold" id="secondary18Male">0</span> Lelaki
             </div>
             <div class="bg-pink-200 text-pink-800 px-2 py-1 rounded"><span class="font-bold" id="secondary18Female">0</span> Perempuan
+            </div>
+           </div><!-- Race breakdown for U18 -->
+           <div class="bg-white rounded-lg p-2 text-xs">
+            <div class="font-semibold text-gray-700 mb-2">
+             Mengikut Bangsa:
+            </div>
+            <div class="grid grid-cols-2 gap-1">
+             <div class="flex justify-between"><span>🔹 Melayu:</span> <span class="font-bold text-gray-800" id="secondary18Melayu">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Cina:</span> <span class="font-bold text-gray-800" id="secondary18Cina">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 India:</span> <span class="font-bold text-gray-800" id="secondary18India">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Bumip.:</span> <span class="font-bold text-gray-800" id="secondary18Bumip">0</span>
+             </div>
+             <div class="flex justify-between"><span>🔹 Lain:</span> <span class="font-bold text-gray-800" id="secondary18Lain">0</span>
+             </div>
             </div>
            </div>
           </div>
@@ -643,7 +702,281 @@
           <div class="mb-2 font-bold">
            Copy this code to your Apps Script:
           </div>
-          <pre id="appsScriptCode">Loading script template...</pre>
+          <pre id="appsScriptCode">// MSSD Catur Registration System - Google Apps Script
+// Your spreadsheet ID is already configured below
+
+const SPREADSHEET_ID = '${spreadsheetId}';
+
+function doGet(e) {
+  try {
+    const action = e.parameter.action;
+    const callback = e.parameter.callback;
+    
+    let result = {};
+    
+    if (action === 'load') {
+      result = loadRegistrations();
+    } else if (action === 'search') {
+      const regId = e.parameter.regId;
+      const password = e.parameter.password;
+      result = searchRegistration(regId, password);
+    }
+    
+    // JSONP response
+    if (callback) {
+      return ContentService
+        .createTextOutput(callback + '(' + JSON.stringify(result) + ')')
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+    
+    return ContentService
+      .createTextOutput(JSON.stringify(result))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    const errorResult = { error: error.toString() };
+    const callback = e.parameter.callback;
+    
+    if (callback) {
+      return ContentService
+        .createTextOutput(callback + '(' + JSON.stringify(errorResult) + ')')
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+    
+    return ContentService
+      .createTextOutput(JSON.stringify(errorResult))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+    const action = data.action;
+    
+    if (action === 'submit' || action === 'update') {
+      return saveRegistration(data);
+    }
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: 'Unknown action' }))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function loadRegistrations() {
+  try {
+    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+    
+    // Create sheets if they don't exist
+    let teacherSheet = ss.getSheetByName('GURU');
+    if (!teacherSheet) {
+      teacherSheet = ss.insertSheet('GURU');
+      teacherSheet.getRange(1, 1, 1, 10).setValues([['ID PENDAFTARAN', 'NAMA SEKOLAH', 'NAMA GURU', 'EMAIL GURU', 'TELEFON GURU', 'JAWATAN GURU', 'URUTAN GURU', 'TARIKH DAFTAR', 'TARIKH KEMASKINI', 'STATUS']]);
+    }
+    
+    let schoolSheet = ss.getSheetByName('SEKOLAH');
+    if (!schoolSheet) {
+      schoolSheet = ss.insertSheet('SEKOLAH');
+      schoolSheet.getRange(1, 1, 1, 14).setValues([['ID PENDAFTARAN', 'NAMA SEKOLAH', 'JENIS SEKOLAH', 'JUMLAH GURU', 'JUMLAH PELAJAR', 'JUMLAH LELAKI', 'JUMLAH PEREMPUAN', 'JUMLAH U12', 'JUMLAH U15', 'JUMLAH U18', 'TARIKH DAFTAR', 'TARIKH KEMASKINI', 'STATUS', 'CATATAN']]);
+    }
+    
+    let studentSheet = ss.getSheetByName('PELAJAR');
+    if (!studentSheet) {
+      studentSheet = ss.insertSheet('PELAJAR');
+      studentSheet.getRange(1, 1, 1, 14).setValues([['ID PENDAFTARAN', 'NAMA SEKOLAH', 'NAMA PELAJAR', 'NO IC', 'JANTINA', 'KATEGORI UMUR', 'KATEGORI DISPLAY', 'BANGSA', 'ID PEMAIN', 'GURU KETUA', 'TELEFON GURU', 'TARIKH DAFTAR', 'TARIKH KEMASKINI', 'STATUS']]);
+    }
+    
+    const registrations = {};
+    
+    // Load data from sheets
+    const schoolData = schoolSheet.getDataRange().getValues();
+    const teacherData = teacherSheet.getDataRange().getValues();
+    const studentData = studentSheet.getDataRange().getValues();
+    
+    // Process schools (skip header row)
+    for (let i = 1; i &lt; schoolData.length; i++) {
+      const row = schoolData[i];
+      const regId = row[0];
+      if (regId) {
+        registrations[regId] = {
+          schoolName: row[1],
+          schoolType: row[2],
+          createdAt: row[10],
+          updatedAt: row[11],
+          status: row[12],
+          teachers: [],
+          students: []
+        };
+      }
+    }
+    
+    // Process teachers (skip header row)
+    for (let i = 1; i &lt; teacherData.length; i++) {
+      const row = teacherData[i];
+      const regId = row[0];
+      if (regId &amp;&amp; registrations[regId]) {
+        registrations[regId].teachers.push({
+          name: row[2],
+          email: row[3],
+          phone: row[4],
+          position: row[5],
+          order: row[6]
+        });
+      }
+    }
+    
+    // Process students (skip header row)
+    for (let i = 1; i &lt; studentData.length; i++) {
+      const row = studentData[i];
+      const regId = row[0];
+      if (regId &amp;&amp; registrations[regId]) {
+        registrations[regId].students.push({
+          name: row[2],
+          ic: row[3],
+          gender: row[4],
+          category: row[5],
+          categoryDisplay: row[6],
+          race: row[7],
+          playerId: row[8]
+        });
+      }
+    }
+    
+    return { registrations: registrations };
+    
+  } catch (error) {
+    return { error: 'Failed to load data: ' + error.toString() };
+  }
+}
+
+function saveRegistration(data) {
+  try {
+    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+    const teacherSheet = ss.getSheetByName('GURU');
+    const schoolSheet = ss.getSheetByName('SEKOLAH');
+    const studentSheet = ss.getSheetByName('PELAJAR');
+    
+    const regId = data.registrationId;
+    const isUpdate = data.action === 'update';
+    
+    // For updates, preserve original creation date
+    let createdDate, updatedDate;
+    if (isUpdate &amp;&amp; data.originalCreatedAt) {
+      createdDate = new Date(data.originalCreatedAt);
+      updatedDate = new Date(data.updateTimestamp);
+    } else {
+      // New registration - both dates are the same
+      createdDate = updatedDate = new Date(data.timestamp || new Date());
+    }
+    
+    // Determine school type - use provided schoolType or auto-detect
+    let schoolType = data.schoolType || 'LAIN-LAIN';
+    
+    // Calculate statistics
+    const totalTeachers = data.teachers.length;
+    const totalStudents = data.students.length;
+    let totalMale = 0, totalFemale = 0;
+    let totalU12 = 0, totalU15 = 0, totalU18 = 0;
+    
+    data.students.forEach(student =&gt; {
+      if (student.gender === 'Lelaki') totalMale++;
+      else totalFemale++;
+      
+      if (student.category.includes('12')) totalU12++;
+      else if (student.category.includes('15')) totalU15++;
+      else if (student.category.includes('18')) totalU18++;
+    });
+    
+    // Clear existing data for this registration
+    [teacherSheet, schoolSheet, studentSheet].forEach(sheet =&gt; {
+      const sheetData = sheet.getDataRange().getValues();
+      for (let i = sheetData.length - 1; i &gt;= 1; i--) {
+        if (sheetData[i][0] === regId) {
+          sheet.deleteRow(i + 1);
+        }
+      }
+    });
+    
+    // Save school data - preserve original creation date for updates
+    schoolSheet.appendRow([
+      regId, data.schoolName, schoolType, totalTeachers, totalStudents,
+      totalMale, totalFemale, totalU12, totalU15, totalU18,
+      createdDate, updatedDate, 'AKTIF', ''
+    ]);
+    
+    // Save teachers - preserve original creation date for updates
+    data.teachers.forEach((teacher, index) =&gt; {
+      const position = index === 0 ? 'KETUA' : 'PENGIRING';
+      const order = index + 1;
+      
+      teacherSheet.appendRow([
+        regId, data.schoolName, teacher.name, teacher.email, teacher.phone,
+        position, order, createdDate, updatedDate, 'AKTIF'
+      ]);
+    });
+    
+    // Save students - preserve original creation date for updates
+    const headTeacher = data.teachers[0];
+    data.students.forEach(student =&gt; {
+      // Generate category display (L12, P15, etc.)
+      const genderCode = student.gender === 'Lelaki' ? 'L' : 'P';
+      const ageCode = student.category.includes('12') ? '12' : 
+                     student.category.includes('15') ? '15' : '18';
+      const categoryDisplay = genderCode + ageCode;
+      
+      studentSheet.appendRow([
+        regId, data.schoolName, student.name, student.ic, student.gender,
+        student.category, categoryDisplay, student.race, student.playerId,
+        headTeacher.name, headTeacher.phone, createdDate, updatedDate, 'AKTIF'
+      ]);
+    });
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: true, registrationId: regId }))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function searchRegistration(regId, password) {
+  try {
+    const registrations = loadRegistrations();
+    
+    if (registrations.error) {
+      return { found: false, error: registrations.error };
+    }
+    
+    const registration = registrations.registrations[regId];
+    if (!registration) {
+      return { found: false, error: 'Registration not found' };
+    }
+    
+    // Verify password (last 4 digits of first teacher's phone)
+    if (registration.teachers.length &gt; 0) {
+      const phone = registration.teachers[0].phone.replace(/\D/g, '');
+      const last4 = phone.slice(-4);
+      
+      if (last4 === password) {
+        return { found: true, registration: registration };
+      }
+    }
+    
+    return { found: false, error: 'Invalid password' };
+    
+  } catch (error) {
+    return { found: false, error: error.toString() };
+  }
+}</pre>
          </div>
         </div><!-- Step 3 -->
         <div class="border-l-4 border-blue-500 pl-4">
@@ -987,6 +1320,7 @@
 
         function collectFormData() {
             const schoolName = document.getElementById('schoolName').value;
+            const schoolType = document.getElementById('schoolType').value;
             
             const teachers = [];
             document.querySelectorAll('.teacher-entry').forEach((entry, index) => {
@@ -1020,7 +1354,7 @@
                 });
             });
             
-            return { schoolName, teachers, students };
+            return { schoolName, schoolType, teachers, students };
         }
 
         async function sendToGoogleSheets(regId, data) {
@@ -1039,6 +1373,7 @@
                         action: 'submit',
                         registrationId: regId,
                         schoolName: data.schoolName,
+                        schoolType: data.schoolType,
                         teachers: data.teachers,
                         students: data.students,
                         timestamp: new Date().toISOString()
@@ -1218,7 +1553,7 @@
                 `🆔 ID Pendaftaran: ${regId}`,
                 `👩‍🏫 Nama Guru (Ketua): ${data.teachers[0].name}`,
                 `📞 No. Telefon Guru: ${data.teachers[0].phone}`,
-                `👥 Jumlah Pelajar: ${data.students.length} orang (${categoryText})`,
+                `�� Jumlah Pelajar: ${data.students.length} orang (${categoryText})`,
                 '',
                 'Terima kasih atas sokongan dan penyertaan anda. 🙏',
                 'Sebarang maklumat lanjut akan dimaklumkan melalui WhatsApp rasmi MSSD Catur. 📱',
@@ -1407,6 +1742,13 @@
             let secondary15Male = 0, secondary15Female = 0;
             let secondary18Male = 0, secondary18Female = 0;
             
+            // Race breakdown counters
+            const raceBreakdown = {
+                primary12: { Melayu: 0, Cina: 0, India: 0, Bumiputera: 0, 'Lain-lain': 0 },
+                secondary15: { Melayu: 0, Cina: 0, India: 0, Bumiputera: 0, 'Lain-lain': 0 },
+                secondary18: { Melayu: 0, Cina: 0, India: 0, Bumiputera: 0, 'Lain-lain': 0 }
+            };
+            
             Object.values(registrations).forEach(reg => {
                 totalStudents += reg.students.length;
                 totalTeachers += reg.teachers.length;
@@ -1425,19 +1767,43 @@
                 // Count students by category and gender
                 reg.students.forEach(student => {
                     const isMale = student.gender === 'Lelaki';
+                    const race = student.race || 'Lain-lain';
                     
                     if (student.category.includes('12')) {
                         hasU12 = true;
                         if (isMale) primary12Male++;
                         else primary12Female++;
+                        
+                        // Count by race for U12
+                        if (race === 'Melayu') raceBreakdown.primary12.Melayu++;
+                        else if (race === 'Cina') raceBreakdown.primary12.Cina++;
+                        else if (race === 'India') raceBreakdown.primary12.India++;
+                        else if (race === 'Bumiputera') raceBreakdown.primary12.Bumiputera++;
+                        else raceBreakdown.primary12['Lain-lain']++;
+                        
                     } else if (student.category.includes('15')) {
                         hasU15 = true;
                         if (isMale) secondary15Male++;
                         else secondary15Female++;
+                        
+                        // Count by race for U15
+                        if (race === 'Melayu') raceBreakdown.secondary15.Melayu++;
+                        else if (race === 'Cina') raceBreakdown.secondary15.Cina++;
+                        else if (race === 'India') raceBreakdown.secondary15.India++;
+                        else if (race === 'Bumiputera') raceBreakdown.secondary15.Bumiputera++;
+                        else raceBreakdown.secondary15['Lain-lain']++;
+                        
                     } else if (student.category.includes('18')) {
                         hasU18 = true;
                         if (isMale) secondary18Male++;
                         else secondary18Female++;
+                        
+                        // Count by race for U18
+                        if (race === 'Melayu') raceBreakdown.secondary18.Melayu++;
+                        else if (race === 'Cina') raceBreakdown.secondary18.Cina++;
+                        else if (race === 'India') raceBreakdown.secondary18.India++;
+                        else if (race === 'Bumiputera') raceBreakdown.secondary18.Bumiputera++;
+                        else raceBreakdown.secondary18['Lain-lain']++;
                     }
                 });
                 
@@ -1475,6 +1841,27 @@
             document.getElementById('secondary15Female').textContent = secondary15Female;
             document.getElementById('secondary18Male').textContent = secondary18Male;
             document.getElementById('secondary18Female').textContent = secondary18Female;
+            
+            // Update race breakdown for U12
+            document.getElementById('primary12Melayu').textContent = raceBreakdown.primary12.Melayu;
+            document.getElementById('primary12Cina').textContent = raceBreakdown.primary12.Cina;
+            document.getElementById('primary12India').textContent = raceBreakdown.primary12.India;
+            document.getElementById('primary12Bumip').textContent = raceBreakdown.primary12.Bumiputera;
+            document.getElementById('primary12Lain').textContent = raceBreakdown.primary12['Lain-lain'];
+            
+            // Update race breakdown for U15
+            document.getElementById('secondary15Melayu').textContent = raceBreakdown.secondary15.Melayu;
+            document.getElementById('secondary15Cina').textContent = raceBreakdown.secondary15.Cina;
+            document.getElementById('secondary15India').textContent = raceBreakdown.secondary15.India;
+            document.getElementById('secondary15Bumip').textContent = raceBreakdown.secondary15.Bumiputera;
+            document.getElementById('secondary15Lain').textContent = raceBreakdown.secondary15['Lain-lain'];
+            
+            // Update race breakdown for U18
+            document.getElementById('secondary18Melayu').textContent = raceBreakdown.secondary18.Melayu;
+            document.getElementById('secondary18Cina').textContent = raceBreakdown.secondary18.Cina;
+            document.getElementById('secondary18India').textContent = raceBreakdown.secondary18.India;
+            document.getElementById('secondary18Bumip').textContent = raceBreakdown.secondary18.Bumiputera;
+            document.getElementById('secondary18Lain').textContent = raceBreakdown.secondary18['Lain-lain'];
             
             const listContainer = document.getElementById('registrationsList');
             listContainer.innerHTML = '';
@@ -2233,8 +2620,9 @@ function searchRegistration(regId, password) {
             document.getElementById('editRegId').value = regId;
             document.getElementById('originalCreatedAt').value = registration.createdAt || new Date().toISOString();
             
-            // Populate school name
+            // Populate school name and type
             document.getElementById('editSchoolName').value = registration.schoolName || '';
+            document.getElementById('editSchoolType').value = registration.schoolType || '';
             
             // Populate teachers
             const teachersContainer = document.getElementById('editTeachersContainer');
@@ -2430,6 +2818,7 @@ function searchRegistration(regId, password) {
             
             // Collect updated data
             const schoolName = document.getElementById('editSchoolName').value;
+            const schoolType = document.getElementById('editSchoolType').value;
             
             const teachers = [];
             document.querySelectorAll('.edit-teacher-entry').forEach((entry, index) => {
@@ -2470,6 +2859,7 @@ function searchRegistration(regId, password) {
                 // Update local storage immediately
                 const updatedData = {
                     schoolName: schoolName,
+                    schoolType: schoolType,
                     teachers: teachers,
                     students: students,
                     createdAt: originalCreatedAt, // Keep original creation date
@@ -2493,6 +2883,7 @@ function searchRegistration(regId, password) {
                                 action: 'update',
                                 registrationId: regId,
                                 schoolName: schoolName,
+                                schoolType: schoolType,
                                 teachers: teachers,
                                 students: students,
                                 originalCreatedAt: originalCreatedAt,
@@ -2570,5 +2961,5 @@ function searchRegistration(regId, password) {
             }
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c05b77b73eaa846',t:'MTc2ODgxOTI1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c0654dbb181a856',t:'MTc2ODgyNTcwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
