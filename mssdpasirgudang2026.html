@@ -1501,7 +1501,7 @@ function searchRegistration(regId, password) {
                     }
                 } else {
                     console.log('⚠️ Invalid or empty response from server');
-                    showSyncStatus('⚠️ Respons tidak sah dari server', 'warning');
+                    showSyncStatus('���️ Respons tidak sah dari server', 'warning');
                 }
             } catch (error) {
                 console.error('❌ Sync error:', error);
@@ -2161,7 +2161,7 @@ function loadRegistrations() {
     let studentSheet = ss.getSheetByName('PELAJAR');
     if (!studentSheet) {
       studentSheet = ss.insertSheet('PELAJAR');
-      studentSheet.getRange(1, 1, 1, 13).setValues([['ID PENDAFTARAN', 'NAMA SEKOLAH', 'NAMA PELAJAR', 'NO IC', 'JANTINA', 'KATEGORI UMUR', 'KATEGORI DISPLAY', 'ID PEMAIN', 'GURU KETUA', 'TELEFON GURU', 'TARIKH DAFTAR', 'TARIKH KEMASKINI', 'STATUS']]);
+      studentSheet.getRange(1, 1, 1, 14).setValues([['ID PENDAFTARAN', 'NAMA SEKOLAH', 'NAMA PELAJAR', 'NO IC', 'JANTINA', 'KATEGORI UMUR', 'KATEGORI DISPLAY', 'BANGSA', 'ID PEMAIN', 'GURU KETUA', 'TELEFON GURU', 'TARIKH DAFTAR', 'TARIKH KEMASKINI', 'STATUS']]);
     }
     
     const registrations = {};
@@ -2214,7 +2214,8 @@ function loadRegistrations() {
           gender: row[4],
           category: row[5],
           categoryDisplay: row[6],
-          playerId: row[7]
+          race: row[7],
+          playerId: row[8]
         });
       }
     }
@@ -2309,7 +2310,7 @@ function saveRegistration(data) {
       
       studentSheet.appendRow([
         regId, data.schoolName, student.name, student.ic, student.gender,
-        student.category, categoryDisplay, student.playerId,
+        student.category, categoryDisplay, student.race, student.playerId,
         headTeacher.name, headTeacher.phone, createdDate, updatedDate, 'AKTIF'
       ]);
     });
@@ -2961,5 +2962,5 @@ function searchRegistration(regId, password) {
             }
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c0654dbb181a856',t:'MTc2ODgyNTcwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c06fd55d614a84a',t:'MTc2ODgzMjYwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
