@@ -312,7 +312,7 @@
       </div><!-- Secondary School Schedule -->
       <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6"><button onclick="toggleSchedule('secondary')" class="w-full text-left hover:bg-purple-100 transition-colors rounded-lg p-2 -m-2">
         <div class="flex justify-between items-center">
-         <h4 class="text-lg font-bold text-purple-800">🎓 SEKOLAH MENENGAH (L/P 15/18)</h4><span id="secondaryArrow" class="text-purple-600 font-bold text-xl">▼</span>
+         <h4 class="text-lg font-bold text-purple-800">��� SEKOLAH MENENGAH (L/P 15/18)</h4><span id="secondaryArrow" class="text-purple-600 font-bold text-xl">▼</span>
         </div></button>
        <div id="secondarySchedule" class="hidden mt-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6"><!-- Day 1 -->
@@ -668,7 +668,7 @@
    <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
     <div class="p-6">
      <div class="flex justify-between items-center mb-6">
-      <h2 class="text-2xl font-bold text-purple-600">🔧 Google Sheets Setup Checklist</h2><button onclick="closeSetupModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+      <h2 class="text-2xl font-bold text-purple-600">�� Google Sheets Setup Checklist</h2><button onclick="closeSetupModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
      </div>
      <div class="space-y-6"><!-- Current Configuration -->
       <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -982,7 +982,7 @@ function searchRegistration(regId, password) {
         <div class="border-l-4 border-blue-500 pl-4">
          <h4 class="font-semibold text-blue-700">Step 3: Deploy as Web App</h4>
          <ol class="text-sm text-gray-700 mt-1 ml-4 list-decimal space-y-1">
-          <li>Click "Deploy" → "New deployment"</li>
+          <li>Click "Deploy" �� "New deployment"</li>
           <li>Choose type: "Web app"</li>
           <li>Execute as: "Me"</li>
           <li>Who has access: "Anyone"</li>
@@ -1129,7 +1129,42 @@ function searchRegistration(regId, password) {
             if (e.target.classList.contains('student-gender') || e.target.classList.contains('student-category')) {
                 updateStudentIds();
             }
+            
+            // Filter categories based on school type
+            if (e.target.id === 'schoolType') {
+                updateCategoryOptions();
+            }
         });
+
+        function updateCategoryOptions() {
+            const schoolType = document.getElementById('schoolType').value;
+            const categorySelects = document.querySelectorAll('.student-category');
+            
+            categorySelects.forEach(select => {
+                // Store current value
+                const currentValue = select.value;
+                
+                // Clear options
+                select.innerHTML = '<option value="">Pilih Kategori</option>';
+                
+                // Add appropriate options based on school type
+                if (schoolType === 'Sekolah Kebangsaan') {
+                    select.innerHTML += '<option value="Bawah 12 Tahun">Bawah 12 Tahun</option>';
+                } else if (schoolType === 'Sekolah Menengah') {
+                    select.innerHTML += '<option value="Bawah 15 Tahun">Bawah 15 Tahun</option>';
+                    select.innerHTML += '<option value="Bawah 18 Tahun">Bawah 18 Tahun</option>';
+                } else {
+                    select.innerHTML += '<option value="Bawah 12 Tahun">Bawah 12 Tahun</option>';
+                    select.innerHTML += '<option value="Bawah 15 Tahun">Bawah 15 Tahun</option>';
+                    select.innerHTML += '<option value="Bawah 18 Tahun">Bawah 18 Tahun</option>';
+                }
+                
+                // Restore value if still valid
+                if (currentValue) {
+                    select.value = currentValue;
+                }
+            });
+        }
 
         function generatePlayerId(gender, schoolName, studentIndex, category, regId) {
             const year = new Date().getFullYear().toString().slice(-2);
@@ -1200,7 +1235,7 @@ function searchRegistration(regId, password) {
                 <div class="flex justify-between items-center mb-3">
                     <h4 class="font-semibold text-orange-700">Guru ${teacherCount + 1} (Pengiring)</h4>
                     <button type="button" onclick="removeTeacher(${teacherCount})" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors text-sm">
-                        🗑️ Buang
+                        🗑��� Buang
                     </button>
                 </div>
                 
@@ -2046,9 +2081,6 @@ function searchRegistration(regId, password) {
             
             document.getElementById('setupModal').classList.remove('hidden');
             
-            // Show current configuration
-            document.getElementById('currentScriptUrl').textContent = GOOGLE_SCRIPT_URL || 'Not configured';
-            
             // Load saved configuration
             const savedSpreadsheetId = localStorage.getItem('spreadsheetId');
             const savedWebAppUrl = localStorage.getItem('webAppUrl');
@@ -2058,6 +2090,10 @@ function searchRegistration(regId, password) {
             }
             if (savedWebAppUrl) {
                 document.getElementById('webAppUrl').value = savedWebAppUrl;
+                // Show current configuration from Web App URL input
+                document.getElementById('currentScriptUrl').textContent = savedWebAppUrl || 'Not configured';
+            } else {
+                document.getElementById('currentScriptUrl').textContent = GOOGLE_SCRIPT_URL || 'Not configured';
             }
             
             // Generate Apps Script code template
@@ -2962,5 +2998,5 @@ function searchRegistration(regId, password) {
             }
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c06fd55d614a84a',t:'MTc2ODgzMjYwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c072b5a537ca852',t:'MTc2ODgzNDQ4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
