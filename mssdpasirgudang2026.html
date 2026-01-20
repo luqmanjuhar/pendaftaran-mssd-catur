@@ -60,7 +60,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
          <div><label for="schoolName" class="block text-gray-700 font-medium mb-2">Nama Sekolah *</label> <input type="text" id="schoolName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Contoh: SK Taman Desa">
          </div>
-         <div><label for="schoolType" class="block text-gray-700 font-medium mb-2">Jenis Sekolah *</label> <select id="schoolType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"> <option value="">Pilih Jenis Sekolah</option> <option value="Sekolah Kebangsaan">Sekolah Kebangsaan</option> <option value="Sekolah Menengah">Sekolah Menengah</option> </select>
+         <div><label for="schoolType" class="block text-gray-700 font-medium mb-2">Jenis Sekolah *</label> <select id="schoolType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"> <option value="">Pilih Jenis Sekolah</option> <option value="Sekolah Rendah">Sekolah Rendah</option> <option value="Sekolah Menengah">Sekolah Menengah</option> </select>
          </div>
         </div>
         <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg">
@@ -164,7 +164,7 @@
          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div><label for="editSchoolName" class="block text-gray-700 font-medium mb-2">Nama Sekolah *</label> <input type="text" id="editSchoolName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Contoh: SK Taman Desa">
           </div>
-          <div><label for="editSchoolType" class="block text-gray-700 font-medium mb-2">Jenis Sekolah *</label> <select id="editSchoolType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"> <option value="">Pilih Jenis Sekolah</option> <option value="Sekolah Kebangsaan">Sekolah Kebangsaan</option> <option value="Sekolah Menengah">Sekolah Menengah</option> </select>
+          <div><label for="editSchoolType" class="block text-gray-700 font-medium mb-2">Jenis Sekolah *</label> <select id="editSchoolType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"> <option value="">Pilih Jenis Sekolah</option> <option value="Sekolah Rendah">Sekolah Rendah</option> <option value="Sekolah Menengah">Sekolah Menengah</option> </select>
           </div>
          </div>
         </section>
@@ -1281,7 +1281,7 @@ function searchRegistration(regId, password) {
                 <div class="flex justify-between items-center mb-3">
                     <h4 class="font-semibold text-orange-700">Pelajar ${studentCount + 1}</h4>
                     <button type="button" onclick="removeStudent(${studentCount})" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors text-sm">
-                        🗑️ Buang
+                        🗑��� Buang
                     </button>
                 </div>
                 
@@ -1432,7 +1432,7 @@ function searchRegistration(regId, password) {
             try {
                 // Use JSONP approach for no-cors requests
                 const callbackName = 'googleSheetsCallback_' + Date.now();
-                console.log('📡 Creating JSONP request with callback:', callbackName);
+                console.log('�� Creating JSONP request with callback:', callbackName);
                 
                 // Create a promise that resolves when callback is called
                 const dataPromise = new Promise((resolve, reject) => {
@@ -2283,14 +2283,8 @@ function saveRegistration(data) {
       createdDate = updatedDate = new Date(data.timestamp || new Date());
     }
     
-    // Determine school type
-    const schoolName = data.schoolName.toUpperCase();
-    let schoolType = 'LAIN-LAIN';
-    if (schoolName.includes('SK ')) schoolType = 'SEKOLAH KEBANGSAAN';
-    else if (schoolName.includes('SMK ')) schoolType = 'SEKOLAH MENENGAH KEBANGSAAN';
-    else if (schoolName.includes('SJKC ')) schoolType = 'SEKOLAH JENIS KEBANGSAAN (CINA)';
-    else if (schoolName.includes('SJKT ')) schoolType = 'SEKOLAH JENIS KEBANGSAAN (TAMIL)';
-    else if (schoolName.includes('SMKA ')) schoolType = 'SEKOLAH MENENGAH KEBANGSAAN AGAMA';
+    // Use the school type directly from form selection
+    const schoolType = data.schoolType || 'Lain-lain';
     
     // Calculate statistics
     const totalTeachers = data.teachers.length;
@@ -2551,7 +2545,7 @@ function searchRegistration(regId, password) {
             const password = document.getElementById('searchPassword').value.trim();
             
             if (!regId || !password) {
-                showNotification('❌ Sila masukkan ID pendaftaran dan kata laluan', 'error');
+                showNotification('��� Sila masukkan ID pendaftaran dan kata laluan', 'error');
                 return;
             }
             
@@ -2998,5 +2992,5 @@ function searchRegistration(regId, password) {
             }
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c072b5a537ca852',t:'MTc2ODgzNDQ4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c0b361e7487a853',t:'MTc2ODg3Njg3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
